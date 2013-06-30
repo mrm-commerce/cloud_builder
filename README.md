@@ -1,16 +1,19 @@
 # CloudBuilder
 
-Generates JSON config for AWS CloudFormation using a Ruby DSL.
+Generates JSON config for AWS CloudFormation using a Ruby DSL. Manage CloudFormation stacks - create, update, diff.
 
 Based on https://github.com/songkick/cloud_formatter 
 
 ## Installation
 
 Clone the repository, then run:
-	gem build cloud_builder.gemspec
-	gem install cloud_builder-version.gem
+
+    gem build cloud_builder.gemspec
+    gem install cloud_builder-version.gem
 
 ## Usage
+
+### CLI tool 
 
     $ stack --help
     Usage:
@@ -30,6 +33,12 @@ Clone the repository, then run:
         -e, --estimate                estimate template cost
         -h, --help                    print help
 
+For most actions you will require an active AWS account, so make sure you export `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` to `ENV`
+
+### Example stack
+
+See stacks/example.rb for an example stack.  
+
 ## Contributing
 
 1. Fork it
@@ -44,8 +53,8 @@ Clone the repository, then run:
 - added support for template Outputs (see http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/outputs-section-structure.html)
 
 ### 0.0.5
-- cli can use the EC2_REGION, CLOUD_BUILDER_BUCKET and CLOUD_BUILDER_DIFF_TOOL environment variables as defaults for --region, --bucket and --diff-tool
-- deprecated the --upload flag/action, if you specify a bucket the stack json is uploaded by default
+- cli can use the EC2_REGION, CLOUD_BUILDER_BUCKET and CLOUD_BUILDER_DIFF_TOOL environment variables as defaults for `--region`, `--bucket` and `--diff-tool`
+- deprecated the `--upload` flag/action, if you specify a bucket the stack json is uploaded by default
 
 ### 0.0.4
 - support for specifying an AWS region
@@ -55,10 +64,10 @@ Clone the repository, then run:
 - AWS resources can have a Version property
 
 ### 0.0.2
-- fix cloud_builder problem when using --help
+- fix cloud_builder problem when using `--help`
 - add DontFormatUnderscore class
 - estimation should be done after uploading to s3 bucket
-- add --diff-tool to specify a different tool to use for diffs
+- add `--diff-tool` to specify a different tool to use for diffs
 
 ### 0.0.1 
 - beta initial release
