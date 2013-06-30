@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require 'cloud_builder'
+CloudBuilder::StackCommand.run
+
