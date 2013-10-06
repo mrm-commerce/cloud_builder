@@ -49,6 +49,9 @@ See stacks/example.rb for an example stack.
 
 ## Changelog
 
+### 0.0.7
+- add license to gemspec
+
 ### 0.0.6
 - added support for template Outputs (see http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/outputs-section-structure.html)
 

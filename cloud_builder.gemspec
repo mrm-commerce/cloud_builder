@@ -12,6 +12,8 @@ Gem::Specification.new do |gem|
   gem.summary       = "Generate JSON config for AWS CloudFormation"
   gem.homepage      = ""
 
+  gem.license       = 'MIT'
+
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
