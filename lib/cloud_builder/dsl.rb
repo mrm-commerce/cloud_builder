@@ -51,6 +51,10 @@ module CloudBuilder
     end
     
     def resource(name, &block)
+      if _resources.has_key?(name.to_s)
+        raise NameError('resource %s is already defined' % name.to_s)
+      end
+      
       _resources[name.to_s] = Resource.new(self, name, &block)
     end
     
@@ -59,10 +63,18 @@ module CloudBuilder
     end
     
     def parameter(name, &block)
+      if _parameters.has_key?(DSL.format(name.to_s))
+        raise NameError('parameter %s is already defined' % name.to_s)
+      end
+      
       _parameters[DSL.format(name.to_s)] = Parameter.new(self, &block)
     end
     
     def output(name, &block)
+      if _outputs.has_key?(DSL.format(name.to_s))
+        raise NameError('output %s is already defined' % name.to_s)
+      end
+      
       _outputs[DSL.format(name.to_s)] = Output.new(self, &block)
     end
     

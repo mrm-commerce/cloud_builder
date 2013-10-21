@@ -49,6 +49,9 @@ See stacks/example.rb for an example stack.
 
 ## Changelog
 
+### 0.0.8
+- fix #3 Prevent creation of resources with the same name
+
 ### 0.0.7
 - add license to gemspec
 

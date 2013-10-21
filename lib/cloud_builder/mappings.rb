@@ -18,6 +18,11 @@ module CloudBuilder
     end
     
     def method_missing(map_name, values)
+      puts map_name.to_s
+      if @maps.has_key?(map_name.to_s)
+        raise NameError('mapping %s is already defined' % map_name.to_s)
+      end
+      
       @maps[map_name.to_s] = values
     end
   end

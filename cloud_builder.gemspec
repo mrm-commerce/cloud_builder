@@ -21,6 +21,7 @@ Gem::Specification.new do |gem|
   
   gem.add_development_dependency "netaddr"
   gem.add_development_dependency "rspec", "~> 2.6"
+  gem.add_development_dependency "ip"
   
   gem.add_dependency "clamp"
   gem.add_dependency "json"
