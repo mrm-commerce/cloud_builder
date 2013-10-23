@@ -49,6 +49,10 @@ See stacks/example.rb for an example stack.
 
 ## Changelog
 
+### 0.0.9
+- add support for DeletionPolicy resource attribute (see http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html)
+- remove debug puts in mappings.rb
+
 ### 0.0.8
 - fix #3 Prevent creation of resources with the same name
 

@@ -36,6 +36,7 @@ module CloudBuilder
   VALUE       = 'Value'
   PROPAGATE_AT_LAUNCH = 'PropagateAtLaunch'
   VERSION     = 'AWSTemplateFormatVersion'
+  DELETION_POLICY = 'DeletionPolicy'
 
   
   class Spec

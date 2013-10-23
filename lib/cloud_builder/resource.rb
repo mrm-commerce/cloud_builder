@@ -9,6 +9,7 @@ module CloudBuilder
       @properties = {}
       @metadata = {}
       @block = block
+      @deletion_policy = nil
       
       # add metadata describing the brick we were defined in
       if @block.binding.eval('@type')
@@ -42,6 +43,10 @@ module CloudBuilder
       @current_map = old_map
     end
     
+    def deletion_policy(value)
+      @deletion_policy = value
+    end
+    
     def brick
       @block.binding.eval('brick')
     end
@@ -63,11 +68,17 @@ module CloudBuilder
     end
     
     def to_json_data
+      ret = {TYPE => @type, METADATA => @metadata, PROPERTIES => @properties}
+      
       if @version
-        {TYPE => @type, "Version" => @version, METADATA => @metadata, PROPERTIES => @properties}
-      else
-        {TYPE => @type, METADATA => @metadata, PROPERTIES => @properties}
+        ret["Version"] = @version
       end
+      
+      if @deletion_policy
+        ret[DELETION_POLICY] = @deletion_policy
+      end
+
+      ret     
     end
     
     def method_missing(field, *params)
