@@ -10,7 +10,7 @@ Gem::Specification.new do |gem|
   gem.email         = ["sstoiana@optaros.com"]
   gem.description   = "Generate JSON config for AWS CloudFormation using a Ruby based DSL"
   gem.summary       = "Generate JSON config for AWS CloudFormation"
-  gem.homepage      = ""
+  gem.homepage      = "https://github.com/Optaros/cloud_builder"
 
   gem.license       = 'MIT'
 
