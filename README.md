@@ -49,6 +49,12 @@ See stacks/example.rb for an example stack.
 
 ## Changelog
 
+### 0.0.11
+- cli now uses AWS_DEFAULT_REGION instead of EC2_REGION
+
+### 0.0.10 
+- publish gem homepage
+
 ### 0.0.9
 - add support for DeletionPolicy resource attribute (see http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html)
 - remove debug puts in mappings.rb

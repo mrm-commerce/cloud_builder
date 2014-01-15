@@ -6,7 +6,7 @@ require 'tempfile'
 module CloudBuilder
   class StackCommand < Clamp::Command
     parameter "STACK", "stack to build"
-    option ["-r", "--region"], "REGION", "AWS region to use", :default => "us-east-1", :environment_variable => "EC2_REGION"
+    option ["-r", "--region"], "REGION", "AWS region to use", :default => "us-east-1", :environment_variable => "AWS_DEFAULT_REGION"
     option ["-v", "--validate"], :flag, "validate the stack file before doing anything else"
     option ["-b", "--bucket"], "BUCKET", "upload template to BUCKET", :attribute_name => :bucket, :default => nil, :environment_variable => "CLOUD_BUILDER_BUCKET"
     option ["-t", "--diff-tool"], "DIFF_TOOL", "tool to use for diff", :environment_variable => "CLOUD_BUILDER_DIFF_TOOL"
