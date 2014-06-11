@@ -13,7 +13,7 @@ module CloudBuilder
     option ["-c", "--create"], :flag, "create the stack"
     option ["-u", "--update"], :flag, "update the stack"
 
-    option ["-d", "--diff"], :flag, "do a diff between the existing template in BUCKET and the generated template"
+    option ["-d", "--diff"], :flag, "do a diff between the existing template in BUCKET and the generated template", :default => true
 
     option ["-e", "--estimate"], :flag, "estimate template cost"
 
@@ -51,7 +51,7 @@ module CloudBuilder
         cmd = "%s %s %s" % [diff_tool ? diff_tool : "git diff --color", t1.path, t2.path]
         # puts cmd
         puts `#{cmd}`
-        return
+        #return
       end
 
       if bucket
