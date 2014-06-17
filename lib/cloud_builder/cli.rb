@@ -13,7 +13,7 @@ module CloudBuilder
     option ["-c", "--create"], :flag, "create the stack"
     option ["-u", "--update"], :flag, "update the stack"
 
-    option ["-d", "--diff"], :flag, "do a diff between the existing template in BUCKET and the generated template", :default => true
+    option ["-d", "--diff"], :flag, "do a diff between the existing template in BUCKET and the generated template"
 
     option ["-e", "--estimate"], :flag, "estimate template cost"
 
@@ -33,7 +33,7 @@ module CloudBuilder
         end
       end
 
-      if diff?
+      if (diff? || update?)
         remote_template = cf.stacks[key].template
         
         # b = s3.buckets[bucket]
@@ -51,6 +51,9 @@ module CloudBuilder
         cmd = "%s %s %s" % [diff_tool ? diff_tool : "git diff --color", t1.path, t2.path]
         # puts cmd
         puts `#{cmd}`
+        if (diff? && !update?)
+          return
+        end
         #return
       end
 
