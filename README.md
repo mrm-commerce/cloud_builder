@@ -49,6 +49,9 @@ See stacks/example.rb for an example stack.
 
 ## Changelog
 
+### 0.0.12
+- add --dummy flag; will add a dummy WaitConditionHandle to the stack to force updates in cases when only unused parameters or mappings are changed
+
 ### 0.0.11
 - cli now uses AWS_DEFAULT_REGION instead of EC2_REGION
 

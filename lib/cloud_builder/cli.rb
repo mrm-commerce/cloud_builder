@@ -16,9 +16,18 @@ module CloudBuilder
     option ["-d", "--diff"], :flag, "do a diff between the existing template in BUCKET and the generated template"
 
     option ["-e", "--estimate"], :flag, "estimate template cost"
+    option ["-m", "--dummy"], :flag, "add a dummy WaitConditionHandle to the template"
 
     def execute
-      template = CloudBuilder::Stack.new(stack).to_json + "\n"
+      template = CloudBuilder::Stack.new(stack)
+      
+      if dummy?
+        template.resource "dummy" do 
+          type "AWS::CloudFormation::WaitConditionHandle"
+        end
+      end
+      
+      template = template.to_json + "\n"
 
       cf = AWS::CloudFormation.new(:cloud_formation_endpoint => 'cloudformation.%s.amazonaws.com' % region)
 
