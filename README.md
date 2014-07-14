@@ -49,6 +49,9 @@ See stacks/example.rb for an example stack.
 
 ## Changelog
 
+### 0.0.13
+- add support for UpdatePolicy resource attribute (see http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatepolicy.html)
+
 ### 0.0.12
 - add --dummy flag; will add a dummy WaitConditionHandle to the stack to force updates in cases when only unused parameters or mappings are changed
 

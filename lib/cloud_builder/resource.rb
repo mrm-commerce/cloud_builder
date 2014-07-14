@@ -10,6 +10,7 @@ module CloudBuilder
       @metadata = {}
       @block = block
       @deletion_policy = nil
+      @update_policy = nil
       
       # add metadata describing the brick we were defined in
       if @block.binding.eval('@type')
@@ -47,6 +48,10 @@ module CloudBuilder
       @deletion_policy = value
     end
     
+    def update_policy(value)
+      @update_policy = value
+    end
+    
     def brick
       @block.binding.eval('brick')
     end
@@ -76,6 +81,10 @@ module CloudBuilder
       
       if @deletion_policy
         ret[DELETION_POLICY] = @deletion_policy
+      end
+      
+      if @update_policy
+        ret[UPDATE_POLICY] = @update_policy
       end
 
       ret     
