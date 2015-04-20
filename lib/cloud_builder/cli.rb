@@ -1,5 +1,5 @@
 require 'clamp'
-require 'aws-sdk'
+require 'aws-sdk-v1'
 
 require 'tempfile'
 
@@ -22,7 +22,7 @@ module CloudBuilder
       template = CloudBuilder::Stack.new(stack)
       
       if dummy?
-        template.resource "dummy" do 
+        template.resource "dummy" do
           type "AWS::CloudFormation::WaitConditionHandle"
         end
       end

@@ -1,3 +1,3 @@
 module CloudBuilder
-  GEM_VERSION = "0.0.13"
+  GEM_VERSION = "0.0.14"
 end

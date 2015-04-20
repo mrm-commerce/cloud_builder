@@ -25,6 +25,6 @@ Gem::Specification.new do |gem|
   
   gem.add_dependency "clamp"
   gem.add_dependency "json"
-  gem.add_dependency "aws-sdk"
+  gem.add_dependency "aws-sdk-v1"
   gem.add_dependency "activesupport"
 end

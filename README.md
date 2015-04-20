@@ -2,7 +2,7 @@
 
 Generates JSON config for AWS CloudFormation using a Ruby DSL. Manage CloudFormation stacks - create, update, diff.
 
-Based on https://github.com/songkick/cloud_formatter 
+Based on https://github.com/songkick/cloud_formatter
 
 ## Installation
 
@@ -13,7 +13,7 @@ Clone the repository, then run:
 
 ## Usage
 
-### CLI tool 
+### CLI tool
 
     $ stack --help
     Usage:
@@ -37,7 +37,7 @@ For most actions you will require an active AWS account, so make sure you export
 
 ### Example stack
 
-See stacks/example.rb for an example stack.  
+See stacks/example.rb for an example stack.
 
 ## Contributing
 
@@ -49,6 +49,9 @@ See stacks/example.rb for an example stack.
 
 ## Changelog
 
+### 0.0.14
+- change aws-sdk require to aws-sdk-v1
+
 ### 0.0.13
 - add support for UpdatePolicy resource attribute (see http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatepolicy.html)
 
@@ -58,7 +61,7 @@ See stacks/example.rb for an example stack.
 ### 0.0.11
 - cli now uses AWS_DEFAULT_REGION instead of EC2_REGION
 
-### 0.0.10 
+### 0.0.10
 - publish gem homepage
 
 ### 0.0.9
@@ -91,5 +94,5 @@ See stacks/example.rb for an example stack.
 - estimation should be done after uploading to s3 bucket
 - add `--diff-tool` to specify a different tool to use for diffs
 
-### 0.0.1 
+### 0.0.1
 - beta initial release
