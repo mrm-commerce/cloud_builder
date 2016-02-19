@@ -38,6 +38,7 @@ module CloudBuilder
   VERSION     = 'AWSTemplateFormatVersion'
   DELETION_POLICY = 'DeletionPolicy'
   UPDATE_POLICY = 'UpdatePolicy'
+  DEPENDS_ON = 'DependsOn'
 
   
   class Spec

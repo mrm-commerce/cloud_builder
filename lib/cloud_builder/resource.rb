@@ -11,6 +11,7 @@ module CloudBuilder
       @block = block
       @deletion_policy = nil
       @update_policy = nil
+      @depends_on = nil
       
       # add metadata describing the brick we were defined in
       if @block.binding.eval('@type')
@@ -47,6 +48,10 @@ module CloudBuilder
     def deletion_policy(value)
       @deletion_policy = value
     end
+
+    def depends_on(value)
+      @depends_on = value
+    end
     
     def update_policy(value)
       @update_policy = value
@@ -81,6 +86,10 @@ module CloudBuilder
       
       if @deletion_policy
         ret[DELETION_POLICY] = @deletion_policy
+      end
+
+      if @depends_on
+        ret[DEPENDS_ON] = @depends_on
       end
       
       if @update_policy
