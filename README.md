@@ -49,6 +49,9 @@ See stacks/example.rb for an example stack.
 
 ## Changelog
 
+### 0.0.15
+- add support for DependsOn resource attribute (see http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-dependson.html)
+
 ### 0.0.14
 - change aws-sdk require to aws-sdk-v1
 
