@@ -42,7 +42,7 @@ module CloudBuilder
         end
       end
 
-      if diff?
+      if (diff? || update?)
         remote_template = cf.stacks[key].template
         
         # b = s3.buckets[bucket]
@@ -60,7 +60,10 @@ module CloudBuilder
         cmd = "%s %s %s" % [diff_tool ? diff_tool : "git diff --color", t1.path, t2.path]
         # puts cmd
         puts `#{cmd}`
-        return
+        if (diff? && !update?)
+          return
+        end
+        #return
       end
 
       if bucket
